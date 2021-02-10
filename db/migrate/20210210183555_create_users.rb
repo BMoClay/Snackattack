@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :age
       t.string :lifestyle
-      t.string :stash
 
       t.timestamps
     end
