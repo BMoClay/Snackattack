@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :authenticate, only: [:me, :update]
 
     def index
         users = User.all 
@@ -6,14 +7,17 @@ class UsersController < ApplicationController
     end 
 
     def login
-        user = User.first
-        render json: user
+        user = User.find_by(name: params[:name])
+        # if user && user.authenticate(params[:name])
+            render json: user
+        # else 
+        #     render json: {errors:  ["invalid user"]}
+        # end
     end 
 
     def me
         # checking some identifying info about the request 
-        user = User.first
-        render json:user
+        render json: @current_user
     end 
 
     def show 
@@ -27,14 +31,14 @@ class UsersController < ApplicationController
     end 
 
     def update
-        user = User.first
-        user.update(user_params)
-        render json: user
+        @current_user.update(user_params)
+        render json: @current_user
     end 
 
-    def delete
+    def destroy
         user = User.find(params[:id])
         user.destroy
+        render json: user
     end 
 
     private 
