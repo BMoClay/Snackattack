@@ -12,9 +12,9 @@ Favorite.destroy_all
 User.create(name: "Ben Morgan-Cleveland", age: 37, lifestyle: "active")
 User.create(name: "Luis Torres", age: 27, lifestyle: "active")
 
-Snack.create(name: "KitKat", img: "/images/kitkat.jpg")
+Snack.create(name: "KitKat", img: "images/kitkat.jpg")
 Snack.create(name: "Corndog", img: "/images/corndog.jpg")
-Snack.create(name: "Hard Boiled Egg", img: "/images/hard_boiled_eggs.jpg")
+Snack.create(name: "Hard Boiled Eggs", img: "/images/hard_boiled_eggs.jpg")
 Snack.create(name: "Nachos", img: "/images/nachos.webp")
 Snack.create(name: "Phish Food", img: "/images/phish_food.jpg")
 Snack.create(name: "Pistachios", img: "/images/pistachios.webp")
