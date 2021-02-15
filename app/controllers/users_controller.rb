@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
-    before_action :authenticate, only: [:me, :update]
+    # before_action :authenticate, only: [:me, :update]
 
     def index
         users = User.all 
         render json: users 
     end 
+
+    def stash
+        user = User.find_by(params[:user_id])
+        render json: user.stash
+    end
 
     def login
         user = User.find_by(name: params[:name])
