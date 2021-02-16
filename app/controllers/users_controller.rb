@@ -6,11 +6,6 @@ class UsersController < ApplicationController
         render json: users 
     end 
 
-    def stash
-        user = User.find_by(params[:user_id])
-        render json: user.stash
-    end
-
     def login
         user = User.find_by(name: params[:name])
         # if user && user.authenticate(params[:name])

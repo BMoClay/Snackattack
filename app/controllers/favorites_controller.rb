@@ -10,4 +10,8 @@ class FavoritesController < ApplicationController
       render json: favorite 
     end
 
+    def stash
+      user = User.find_by(params[:user_id])
+      render json: user.stash
+    end
 end

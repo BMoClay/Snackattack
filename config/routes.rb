@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
   patch "/me", to: "users#update"
   delete "/me", to: "users#delete"
+  post "/me", to: "users#stash"
+
+  get "/favorites", to: "favorites#index"
 
   # get "/snacks", to: "snacks#index"
   # get "/snacks", to: "snacks#show"
-  # get "/me", to: "users#stash"
+  
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
