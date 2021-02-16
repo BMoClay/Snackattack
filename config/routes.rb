@@ -10,10 +10,7 @@ Rails.application.routes.draw do
   post "/me", to: "users#stash"
 
   get "/favorites", to: "favorites#index"
-
-  # get "/snacks", to: "snacks#index"
-  # get "/snacks", to: "snacks#show"
-  
+  delete "/favorites", to: "favorites#delete"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
