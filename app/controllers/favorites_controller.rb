@@ -10,11 +10,6 @@ class FavoritesController < ApplicationController
       render json: favorite 
     end
 
-    # def stash
-    #   user = User.find_by(params[:user_id])
-    #   render json: user.stash
-    # end
-
     def create
       favorite = Favorite.create(favorite_params)
       if favorite.valid?
