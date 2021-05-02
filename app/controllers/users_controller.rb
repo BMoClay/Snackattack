@@ -31,14 +31,20 @@ class UsersController < ApplicationController
     end 
 
     def update
-        @current_user.update(user_params)
-        render json: @current_user
+        user = User.find(params[:id])
+        user.update(user_params)
+        render json: user
     end 
 
     def destroy
         user = User.find(params[:id])
         user.destroy
         render json: user
+    end 
+
+    def favorites
+        user = User.find(params[:id])
+        render json: user.favorites
     end 
 
     private 
